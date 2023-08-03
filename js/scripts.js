@@ -820,3 +820,27 @@ $(document).ready(function () {
     initRestabook();
     initparallax();
 });
+//section "Enjoy Restaurants Specialties"
+document.addEventListener('DOMContentLoaded', ()=>{
+    const tabContent = document.querySelectorAll('.tab-content'),
+          tabsMenu = document.querySelector('.tabs-menu'),
+          tabsMenuItem = document.querySelectorAll('.tabs-menu__item');
+
+          console.log(tabContent);
+    function hideTabContent() {
+        tabContent.forEach(item => {
+            item.classList.remove('first-tab');
+            console.log(tabContent);
+        });
+        tabsMenuItem.forEach(item => {
+            item.classList.remove('current');
+        });
+    }
+    function showTabContent(i = 0){
+        tabContent[i].classList.add('first-tab');
+        tabsMenuItem[i].classList.add('current');
+    }
+// hideTabContent();
+// showTabContent();
+
+});
