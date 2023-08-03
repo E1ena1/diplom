@@ -280,7 +280,7 @@ function initRestabook() {
         }
     }
     inintsingleSlider();
-    
+
     if ($(".product-slider").length > 0) {
         var j2 = new Swiper(".product-slider .swiper-container", {
             preloadImages: false,
@@ -307,7 +307,7 @@ function initRestabook() {
             }
         });
     }
-    // 
+    //
     if ($(".multi-slideshow_fs").length > 0) {
         var ms1 = new Swiper(".multi-slideshow_fs .swiper-container", {
             preloadImages: false,
@@ -814,9 +814,35 @@ function initparallax() {
 }
 document.addEventListener('gesturestart', function (e) {
     e.preventDefault();
-}); 
+});
 //   Init All ------------------
 $(document).ready(function () {
     initRestabook();
     initparallax();
+});
+
+
+//section "Enjoy Restaurants Specialties"
+document.addEventListener('DOMContentLoaded', ()=>{
+    const tabContent = document.querySelectorAll('.tab-content'),
+        tabsMenu = document.querySelector('.tabs-menu'),
+        tabsMenuItem = document.querySelectorAll('.tabs-menu__item');
+
+    console.log(tabContent);
+    function hideTabContent() {
+        tabContent.forEach(item => {
+            item.classList.remove('first-tab');
+            console.log(tabContent);
+        });
+        tabsMenuItem.forEach(item => {
+            item.classList.remove('current');
+        });
+    }
+    function showTabContent(i = 0){
+        tabContent[i].classList.add('first-tab');
+        tabsMenuItem[i].classList.add('current');
+    }
+// hideTabContent();
+// showTabContent();
+
 });
